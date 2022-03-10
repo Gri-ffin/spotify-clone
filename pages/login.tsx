@@ -14,7 +14,7 @@ const Login: NextPage<Props> = ({ providers }) => {
       {Object.values(providers).map((provider) => (
         <div key={provider.name}>
           <button
-            className="ml-7 rounded-full bg-[#18D860] p-5 text-white hover:bg-green-600"
+            className="ml-8 rounded-full bg-[#18D860] p-5 text-white hover:bg-green-600"
             onClick={() => signIn(provider.id, { callbackUrl: '/' })}
           >
             Login with {provider.name}
