@@ -21,6 +21,7 @@ declare module 'next-auth' {
       refreshToken: string | undefined
       username: string | undefined
       image: string | undefined
+      name: string | undefined
       email: string | undefined
     }
   }
