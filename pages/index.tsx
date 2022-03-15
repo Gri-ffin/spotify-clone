@@ -1,17 +1,24 @@
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import Center from '../components/Center/Index'
 import Sidebar from '../components/Sidebar/Sidebar'
 
 const Home: NextPage = () => {
   return (
-    <div className="h-screen overflow-hidden bg-black">
-      <main className="flex">
-        <Sidebar />
-        <Center />
+    <>
+      <Head>
+        <title>Spotify Clone</title>
+        <meta property="description" content="Spotify clone" />
+      </Head>
+      <div className="h-screen overflow-hidden bg-black">
+        <main className="flex">
+          <Sidebar />
+          <Center />
 
-        <div>{/* Player */}</div>
-      </main>
-    </div>
+          <div>{/* Player */}</div>
+        </main>
+      </div>
+    </>
   )
 }
 
