@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@types/node": "17.0.4",
-    "@types/react": "17.0.38",
+    "@types/react": "17.0.40",
     "@types/spotify-web-api-node": "^5.0.7",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.5",
