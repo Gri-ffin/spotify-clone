@@ -1,4 +1,3 @@
-import { MinusIcon } from '@heroicons/react/outline'
 import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 import { isPlayingState } from '../../atoms/IsPlayingAtom'
