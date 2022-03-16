@@ -12,7 +12,7 @@ import { SidebarButton } from './Button'
 import { signOut, useSession } from 'next-auth/react'
 import useFetchFromSpotify from '../../hooks/useFetchFromSpotify'
 import { useRecoilState } from 'recoil'
-import { playlistIdState } from '../../atoms/playlistAtom'
+import { playlistIdState } from '../../atoms/PlaylistIdState'
 
 const Sidebar: React.FC = () => {
   const [playlists, setPlaylists] = useState<any[]>([])

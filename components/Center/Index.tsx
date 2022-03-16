@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { colors } from './GradientColors'
 import { shuffle } from 'lodash'
 import { useRecoilState } from 'recoil'
-import { playlistIdState } from '../../atoms/playlistAtom'
+import { playlistIdState } from '../../atoms/PlaylistIdState'
 
 const Center: React.FC = () => {
   const { data: session } = useSession()
