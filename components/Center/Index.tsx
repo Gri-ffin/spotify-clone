@@ -3,17 +3,30 @@ import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import { colors } from './GradientColors'
 import { shuffle } from 'lodash'
-import { useRecoilState } from 'recoil'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import { playlistIdState } from '../../atoms/PlaylistIdState'
+import { playlistState } from '../../atoms/PlaylistAtom'
+import useFetchFromSpotify from '../../hooks/useFetchFromSpotify'
+import { Songs } from './Songs'
 
 const Center: React.FC = () => {
   const { data: session } = useSession()
+  const spotifyApi = useFetchFromSpotify()
   const [color, setColor] = useState<string>()
-  const [playlistId, setPlaylistId] = useRecoilState(playlistIdState)
+  const playlistId = useRecoilValue(playlistIdState)
+  const [playlist, setPlaylist] = useRecoilState<any>(playlistState)
 
   useEffect(() => {
     setColor(shuffle(colors).pop())
   }, [playlistId])
+
+  useEffect(() => {
+    if (spotifyApi.getAccessToken()) {
+      spotifyApi.getPlaylist(playlistId).then((data) => {
+        setPlaylist(data.body)
+      })
+    }
+  }, [spotifyApi, playlistId])
 
   return (
     <div className="flex-grow">
@@ -32,8 +45,20 @@ const Center: React.FC = () => {
       <section
         className={`flex h-80 items-end space-x-7 bg-gradient-to-b ${color} to-black p-8 text-white`}
       >
-        <img src="" alt="" />
+        <img
+          src={playlist?.images?.[0]?.url}
+          className="h-44 w-44 shadow-2xl"
+        />
+        <div>
+          <p>playlist</p>
+          <h1 className="text-2xl font-bold md:text-3xl xl:text-5xl">
+            {playlist?.name}
+          </h1>
+        </div>
       </section>
+      <div>
+        <Songs />
+      </div>
     </div>
   )
 }
