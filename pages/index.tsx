@@ -30,6 +30,7 @@ const Home: NextPage = () => {
 
 export default Home
 
+// fetch the session on server and get token and user before hitting the client
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context)
 
