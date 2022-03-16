@@ -9,6 +9,11 @@ const Home: NextPage = () => {
       <Head>
         <title>Spotify Clone</title>
         <meta name="description" content="Spotify clone" />
+        <meta
+          name="keywords"
+          content="Spotify, Spotify clone, Spotify web api, Music"
+        />
+        <meta name="author" content="Gri-ffin" />
       </Head>
       <div className="h-screen overflow-hidden bg-black">
         <main className="flex">
