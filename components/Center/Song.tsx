@@ -46,23 +46,19 @@ export const Song: React.FC<Props> = ({ order, track }) => {
             <p className="w-40">{track.track?.artists[0].name}</p>
           </div>
         </div>
-
         <div className="ml-auto flex items-center justify-between md:ml-0">
           <p className="hidden w-40 md:inline">{track.track?.album.name}</p>
           <p>{MsToMinAndSec(track.track?.duration_ms)}</p>
         </div>
       </div>
       {error && (
-        <div className="absolute bottom-0 right-5 rounded-md bg-red-500">
-          <p
-            className="relative left-56 hover:cursor-pointer"
-            onClick={() => {
-              setError('')
-            }}
-          >
-            {<MinusIcon className="h-5 w-5" />}
-          </p>
-          <p className="px-3 pb-2">{error}</p>
+        <div
+          className="absolute bottom-1 right-1 rounded-lg bg-red-500 text-xs text-white hover:cursor-pointer sm:text-sm lg:text-lg"
+          onClick={() => {
+            setError('')
+          }}
+        >
+          <p className="p-3">{error}</p>
         </div>
       )}
     </>
