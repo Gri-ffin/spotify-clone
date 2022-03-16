@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from '@heroicons/react/outline'
-import { useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import { colors } from './GradientColors'
 import { shuffle } from 'lodash'
@@ -31,7 +31,12 @@ const Center: React.FC = () => {
   return (
     <div className="h-screen flex-grow overflow-y-scroll scrollbar-hide">
       <header className="absolute top-5 right-8 text-white">
-        <div className="flex cursor-pointer items-center space-x-3 rounded-full bg-black p-1 pr-2 opacity-90 hover:opacity-80">
+        <div
+          className="flex cursor-pointer items-center space-x-3 rounded-full bg-black p-1 pr-2 opacity-90 hover:opacity-80"
+          onClick={() => {
+            signOut()
+          }}
+        >
           <img
             src={session?.user?.image}
             alt="Profile picture"
