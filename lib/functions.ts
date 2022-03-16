@@ -20,3 +20,13 @@ export async function refreshAccessToken(token: JWT) {
     }
   }
 }
+
+// function that convert milliseconds to minures and seconds
+export function MsToMinAndSec(ms: number) {
+  const seconds = ((ms % 60000) / 1000).toFixed(0)
+  const minutes = Math.floor(ms / 60000)
+
+  return +seconds == 60
+    ? minutes + 1 + ':00'
+    : minutes + ':' + (+seconds < 10 ? '0' : '') + seconds
+}
