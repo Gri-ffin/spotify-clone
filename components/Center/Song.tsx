@@ -1,3 +1,6 @@
+import { useRecoilState } from 'recoil'
+import { isPlayingState } from '../../atoms/IsPlayingAtom'
+import { currentTrackIdState } from '../../atoms/SongAtom'
 import useFetchFromSpotify from '../../hooks/useFetchFromSpotify'
 import { MsToMinAndSec } from '../../lib/functions'
 
@@ -8,9 +11,24 @@ interface Props {
 
 export const Song: React.FC<Props> = ({ order, track }) => {
   const spotifyApi = useFetchFromSpotify()
+  const [currentTrackId, setCurrentTrackId] =
+    useRecoilState(currentTrackIdState)
+
+  const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState)
+
+  const playSong = () => {
+    setCurrentTrackId(track.track?.id)
+    setIsPlaying(true)
+    spotifyApi.play({
+      uris: [track.track?.uri],
+    })
+  }
 
   return (
-    <div className="grid cursor-pointer grid-cols-2 rounded-lg py-4 px-5 text-gray-500 hover:bg-gray-800">
+    <div
+      className="grid cursor-pointer grid-cols-2 rounded-lg py-4 px-5 text-gray-500 hover:bg-gray-800"
+      onClick={playSong}
+    >
       <div className="flex items-center space-x-4">
         <p>{order + 1}</p>
         <img src={track.track?.album.images[0]?.url} className="h-10 w-10" />

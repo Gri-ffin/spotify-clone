@@ -1,6 +1,6 @@
 import { atom } from 'recoil'
 
-export const isPlaying = atom({
+export const isPlayingState = atom({
   key: 'isPlayingState',
   default: false,
 })
