@@ -11,9 +11,12 @@ import {
 import { SidebarButton } from './Button'
 import { signOut, useSession } from 'next-auth/react'
 import useFetchFromSpotify from '../../hooks/useFetchFromSpotify'
+import { useRecoilState } from 'recoil'
+import { playlistIdState } from '../../atoms/playlistAtom'
 
 const Sidebar: React.FC = () => {
   const [playlists, setPlaylists] = useState<any[]>([])
+  const [playlistId, setPlaylistId] = useRecoilState(playlistIdState)
   const { data: session } = useSession()
   const spotifyApi = useFetchFromSpotify()
 
@@ -24,8 +27,6 @@ const Sidebar: React.FC = () => {
       })
     }
   }, [session, spotifyApi])
-
-  console.log(playlists)
 
   return (
     <div className="h-screen overflow-y-scroll border-r border-gray-900 p-5 text-sm text-gray-500 scrollbar-hide">
@@ -63,7 +64,13 @@ const Sidebar: React.FC = () => {
         <hr className="border-t-[0.1px] border-gray-900" />
 
         {playlists.map((playlist) => (
-          <p className="cursor-pointer hover:text-white" key={playlist.id}>
+          <p
+            className="cursor-pointer hover:text-white"
+            key={playlist.id}
+            onClick={() => {
+              setPlaylistId(playlist.id)
+            }}
+          >
             {playlist.name}
           </p>
         ))}
