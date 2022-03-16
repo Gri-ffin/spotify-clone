@@ -13,7 +13,7 @@ const Login: NextPage<Props> = ({ providers }) => {
     <>
       <Head>
         <title>Spotify Clone | Login</title>
-        <meta property="description" content="Spotify clone Login page" />
+        <meta name="description" content="Spotify clone Login page" />
       </Head>
       <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black">
         <Image width={400} height={400} alt="Spotify Icon" src={spotifyImage} />

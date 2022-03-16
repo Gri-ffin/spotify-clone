@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Spotify Clone</title>
-        <meta property="description" content="Spotify clone" />
+        <meta name="description" content="Spotify clone" />
       </Head>
       <div className="h-screen overflow-hidden bg-black">
         <main className="flex">
