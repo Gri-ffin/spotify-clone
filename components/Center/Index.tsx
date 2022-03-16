@@ -3,14 +3,17 @@ import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import { colors } from './GradientColors'
 import { shuffle } from 'lodash'
+import { useRecoilState } from 'recoil'
+import { playlistIdState } from '../../atoms/playlistAtom'
 
 const Center: React.FC = () => {
   const { data: session } = useSession()
   const [color, setColor] = useState<string>()
+  const [playlistId, setPlaylistId] = useRecoilState(playlistIdState)
 
   useEffect(() => {
     setColor(shuffle(colors).pop())
-  }, [])
+  }, [playlistId])
 
   return (
     <div className="flex-grow">
