@@ -7,7 +7,7 @@ export const Songs: React.FC = () => {
   return (
     <div className="pb-20f flex flex-col space-y-1 px-8 text-white">
       {playlists?.tracks.items.map((track: any, i: number) => (
-        <Song key={track.track?.id} track={track} order={i} />
+        <Song key={i} track={track} order={i} />
       ))}
     </div>
   )
