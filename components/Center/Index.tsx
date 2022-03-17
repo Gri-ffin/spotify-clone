@@ -11,8 +11,6 @@ import { Songs } from './Songs'
 
 const Center: React.FC = () => {
   const { data: session } = useSession()
-  // I hate spotify API
-  const [feedback, setFeedback] = useState<string>()
   const spotifyApi = useFetchFromSpotify()
   const [color, setColor] = useState<string>()
   const playlistId = useRecoilValue(playlistIdState)
@@ -24,12 +22,9 @@ const Center: React.FC = () => {
 
   useEffect(() => {
     if (spotifyApi.getAccessToken()) {
-      spotifyApi
-        .getPlaylist(playlistId)
-        .then((data) => {
-          setPlaylist(data.body)
-        }) // There should be another way but for now i'll diplay some feedback to user if playlist not found
-        .catch(() => setFeedback('Choose a playlist to play'))
+      spotifyApi.getPlaylist(playlistId).then((data) => {
+        setPlaylist(data.body)
+      })
     }
   }, [spotifyApi, playlistId])
 
@@ -62,8 +57,7 @@ const Center: React.FC = () => {
         <div>
           <p className="text-xl font-bold underline">playlist</p>
           <h1 className="text-2xl font-bold md:text-3xl xl:text-5xl">
-            {/* either the playlist if not the feedback */}
-            {playlist?.name || feedback}
+            {playlist?.name}
           </h1>
         </div>
       </section>
