@@ -55,7 +55,7 @@ const Center: React.FC = () => {
           className="h-44 w-44 shadow-2xl"
         />
         <div>
-          <p>playlist</p>
+          <p className="text-xl font-bold underline">playlist</p>
           <h1 className="text-2xl font-bold md:text-3xl xl:text-5xl">
             {playlist?.name}
           </h1>
