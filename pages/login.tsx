@@ -25,12 +25,11 @@ const Login: NextPage<Props> = ({ providers }) => {
         {Object.values(providers).map((provider) => (
           <div key={provider.name}>
             <button
-              className="ml-8 rounded-full bg-[#18D860] p-5 text-white hover:bg-green-600"
+              className="ml-8 mb-5 rounded-full bg-[#18D860] p-3 text-white hover:bg-green-600"
               onClick={() => signIn(provider.id, { callbackUrl: '/' })}
             >
               Login with {provider.name}
             </button>
-            <p className="m-3 text-center text-3xl font-bold text-white">Or</p>
             <a
               className="ml-3 rounded-full bg-gray-400 p-3 text-white hover:cursor-pointer hover:bg-gray-500"
               href="https://github.com/gri-ffin/spotify-clone"
