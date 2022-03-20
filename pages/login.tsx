@@ -23,9 +23,12 @@ const Login: NextPage<Props> = ({ providers }) => {
       <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black">
         <Image width={400} height={400} alt="Spotify Icon" src={spotifyImage} />
         {Object.values(providers).map((provider) => (
-          <div key={provider.name}>
+          <div
+            key={provider.name}
+            className="flex flex-col items-center space-y-1 md:flex-row"
+          >
             <button
-              className="ml-8 mb-5 rounded-full bg-[#18D860] p-3 text-white hover:bg-green-600"
+              className="ml-2 rounded-full bg-[#18D860] p-3 text-white hover:bg-green-600"
               onClick={() => signIn(provider.id, { callbackUrl: '/' })}
             >
               Login with {provider.name}
