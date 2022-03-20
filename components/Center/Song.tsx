@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 import { isPlayingState } from '../../atoms/IsPlayingAtom'
 import { currentTrackIdState } from '../../atoms/SongAtom'
-import useFetchFromSpotify from '../../hooks/useFetchFromSpotify'
+import useFetchFromSpotify from '../../hooks/useSpotifyApi'
 import { MsToMinAndSec } from '../../lib/functions'
 
 interface Props {

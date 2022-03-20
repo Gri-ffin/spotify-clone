@@ -10,7 +10,7 @@ import {
 } from '@heroicons/react/outline'
 import { SidebarButton } from './Button'
 import { signOut, useSession } from 'next-auth/react'
-import useFetchFromSpotify from '../../hooks/useFetchFromSpotify'
+import useFetchFromSpotify from '../../hooks/useSpotifyApi'
 import { useRecoilState } from 'recoil'
 import { playlistIdState } from '../../atoms/PlaylistIdState'
 

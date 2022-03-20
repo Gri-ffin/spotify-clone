@@ -6,7 +6,7 @@ import { shuffle } from 'lodash'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { playlistIdState } from '../../atoms/PlaylistIdState'
 import { playlistState } from '../../atoms/PlaylistAtom'
-import useFetchFromSpotify from '../../hooks/useFetchFromSpotify'
+import useFetchFromSpotify from '../../hooks/useSpotifyApi'
 import { Songs } from './Songs'
 
 const Center: React.FC = () => {
