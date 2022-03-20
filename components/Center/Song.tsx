@@ -66,7 +66,7 @@ export const Song: React.FC<Props> = ({ order, track }) => {
         </div>
       )}
       {error && (
-        <div className="absolute bottom-1 right-1 rounded-lg bg-red-500 text-xs text-white sm:text-sm lg:text-lg">
+        <div className="absolute top-1 right-1 rounded-lg bg-red-500 text-xs text-white sm:text-sm lg:text-lg">
           <p className="p-3">{error}</p>
         </div>
       )}
