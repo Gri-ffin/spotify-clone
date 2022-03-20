@@ -2,7 +2,7 @@ import { signIn, useSession } from 'next-auth/react'
 import { useEffect } from 'react'
 import spotifyApi from '../lib/spotify'
 
-const useFetchFromSpotify = () => {
+const useSpotifyApi = () => {
   const { data: session } = useSession()
 
   useEffect(() => {
@@ -18,4 +18,4 @@ const useFetchFromSpotify = () => {
   return spotifyApi
 }
 
-export default useFetchFromSpotify
+export default useSpotifyApi

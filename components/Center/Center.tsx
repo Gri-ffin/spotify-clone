@@ -6,12 +6,12 @@ import { shuffle } from 'lodash'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { playlistIdState } from '../../atoms/PlaylistIdState'
 import { playlistState } from '../../atoms/PlaylistAtom'
-import useFetchFromSpotify from '../../hooks/useSpotifyApi'
+import useSpotifyApi from '../../hooks/useSpotifyApi'
 import { Songs } from './Songs'
 
 const Center: React.FC = () => {
   const { data: session } = useSession()
-  const spotifyApi = useFetchFromSpotify()
+  const spotifyApi = useSpotifyApi()
   const [color, setColor] = useState<string>()
   const playlistId = useRecoilValue(playlistIdState)
   const [playlist, setPlaylist] = useRecoilState<any>(playlistState)

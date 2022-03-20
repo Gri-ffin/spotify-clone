@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 import { isPlayingState } from '../../atoms/IsPlayingAtom'
 import { currentTrackIdState } from '../../atoms/SongAtom'
-import useFetchFromSpotify from '../../hooks/useSpotifyApi'
+import useSpotifyApi from '../../hooks/useSpotifyApi'
 import { MsToMinAndSec } from '../../lib/functions'
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 
 export const Song: React.FC<Props> = ({ order, track }) => {
   const [error, setError] = useState<string>()
-  const spotifyApi = useFetchFromSpotify()
+  const spotifyApi = useSpotifyApi()
   const [currentTrackId, setCurrentTrackId] =
     useRecoilState(currentTrackIdState)
 

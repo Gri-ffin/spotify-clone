@@ -10,7 +10,7 @@ import {
 } from '@heroicons/react/outline'
 import { SidebarButton } from './Button'
 import { signOut, useSession } from 'next-auth/react'
-import useFetchFromSpotify from '../../hooks/useSpotifyApi'
+import useSpotifyApi from '../../hooks/useSpotifyApi'
 import { useRecoilState } from 'recoil'
 import { playlistIdState } from '../../atoms/PlaylistIdState'
 
@@ -18,7 +18,7 @@ const Sidebar: React.FC = () => {
   const [playlists, setPlaylists] = useState<any[]>([])
   const [playlistId, setPlaylistId] = useRecoilState(playlistIdState)
   const { data: session } = useSession()
-  const spotifyApi = useFetchFromSpotify()
+  const spotifyApi = useSpotifyApi()
 
   useEffect(() => {
     if (spotifyApi.getAccessToken()) {
