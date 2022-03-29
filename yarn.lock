@@ -104,9 +104,9 @@
   version "1.0.1"
   resolved "https://registry.npmjs.org/@panva/hkdf/-/hkdf-1.0.1.tgz"
 
-"@types/lodash@^4.14.180":
-  version "4.14.180"
-  resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.180.tgz"
+"@types/lodash@^4.14.181":
+  version "4.14.181"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.181.tgz#d1d3740c379fda17ab175165ba04e2d03389385d"
 
 "@types/node@17.0.23":
   version "17.0.23"
