@@ -797,9 +797,9 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-recoil@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.npmjs.org/recoil/-/recoil-0.6.1.tgz"
+recoil@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.7.0.tgz#de19c6fb9816c172b0dae92cf8fe94c2c90a23ab"
   dependencies:
     hamt_plus "1.0.2"
 
