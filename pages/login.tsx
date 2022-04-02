@@ -25,7 +25,7 @@ const Login: NextPage<Props> = ({ providers }) => {
         {Object.values(providers).map((provider) => (
           <div
             key={provider.name}
-            className="flex flex-col items-center space-y-1 md:flex-row"
+            className="flex flex-col items-center space-y-3 md:flex-row md:space-x-3"
           >
             <button
               className="ml-2 rounded-full bg-[#18D860] p-3 text-white hover:bg-green-600"
@@ -33,6 +33,12 @@ const Login: NextPage<Props> = ({ providers }) => {
             >
               Login with {provider.name}
             </button>
+            <a
+              href="https://github.com/Gri-ffin/spotify-clone"
+              className="rounded-full bg-gray-300 p-3 text-white hover:bg-gray-500"
+            >
+              Source code
+            </a>
           </div>
         ))}
       </div>
