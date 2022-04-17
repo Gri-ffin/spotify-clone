@@ -2,4 +2,4 @@
 
 School project.
 
-this project is in development mode on spotify so login in with other accounts than mine will just fail.
+Minimal spotify clone where i can connect to spotify and listen to music.
