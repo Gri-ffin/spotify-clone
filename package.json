@@ -10,7 +10,7 @@
     "@types/lodash": "^4.14.181",
     "lodash": "^4.17.21",
     "next": "latest",
-    "next-auth": "^4.3.2",
+    "next-auth": "^4.3.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "recoil": "^0.7.0",
