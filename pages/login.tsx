@@ -25,7 +25,7 @@ const Login: NextPage<Props> = ({ providers }) => {
         {Object.values(providers).map((provider) => (
           <div
             key={provider.name}
-            className="flex flex-col items-center space-y-3 md:flex-row md:space-x-3"
+            className="flex flex-col items-center space-y-3 md:flex-row md:space-x-3 md:space-y-0"
           >
             <button
               className="ml-2 rounded-full bg-[#18D860] p-3 text-white hover:bg-green-600"
