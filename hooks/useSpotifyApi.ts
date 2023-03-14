@@ -8,7 +8,7 @@ const useSpotifyApi = () => {
   useEffect(() => {
     if (session) {
       // if the refresh access token fail, redirect user to login
-      if (session.error === 'RefreshedTokenError') {
+      if (session.user.refreshToken === 'RefreshedTokenError') {
         signIn()
       }
       spotifyApi.setAccessToken(session?.user?.accessToken!)
